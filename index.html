@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academic Thesis Services by an Expert</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #2a2a72;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    section {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    h2 {
+      color: #2a2a72;
+    }
+    input, select, button {
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      width: 100%;
+    }
+    button {
+      background-color: #2a2a72;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .result {
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+    footer {
+      text-align: center;
+      background-color: #2a2a72;
+      color: white;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Academic Thesis Writing Services</h1>
+    <p>Specialized in Psychology, Management, HRM, and Social Sciences</p>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <p>I am a Ph.D. researcher based in Germany with extensive experience in writing Bachelor's, Master's, and PhD theses. I specialize in topics related to psychology, leadership, organizational behavior, human resources, and social sciences. Whether you need help developing a strong theoretical framework, designing your methodology, or structuring and refining your argument, I offer high-quality, ethical, and confidential support.</p>
+  </section>
+
+  <section>
+    <h2>Services Offered</h2>
+    <ul>
+      <li>Full Thesis Writing (Bachelor's, Master's, PhD)</li>
+      <li>Chapter-Wise Support (Introduction, Literature Review, Methodology, etc.)</li>
+      <li>Editing and Proofreading</li>
+      <li>Formatting and Referencing (APA, MLA, Chicago, etc.)</li>
+      <li>Qualitative Analysis Support (Thematic, NVivo, etc.)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Pricing Calculator</h2>
+    <label for="level">Academic Level:</label>
+    <select id="level">
+      <option value="Bachelor">Bachelor’s</option>
+      <option value="Master">Master’s</option>
+      <option value="PhD">PhD</option>
+    </select>
+
+    <label for="service">Service Type:</label>
+    <select id="service">
+      <option value="Full Thesis">Full Thesis</option>
+      <option value="Per Page">Per Page</option>
+      <option value="Editing">Editing/Proofreading</option>
+      <option value="Formatting">Formatting/Referencing</option>
+    </select>
+
+    <label for="pages">Number of Pages:</label>
+    <input type="number" id="pages" value="60" />
+
+    <label for="urgency">Urgency:</label>
+    <select id="urgency">
+      <option value="Normal">Normal (2+ weeks)</option>
+      <option value="Moderate">Moderate (1-2 weeks)</option>
+      <option value="Urgent">Urgent (<1 week)</option>
+    </select>
+
+    <button onclick="calculatePrice()">Calculate Price</button>
+    <div class="result" id="result">Estimated Price: $0</div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Interested in working together? Reach out via email.</p>
+    <ul>
+      <li>Email: anzeez.space@gmail.com</li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2025 Academic Thesis Services | Confidential & Ethical Support
+  </footer>
+
+  <script>
+    function calculatePrice() {
+      const level = document.getElementById('level').value;
+      const service = document.getElementById('service').value;
+      const pages = parseInt(document.getElementById('pages').value) || 0;
+      const urgency = document.getElementById('urgency').value;
+
+      let basePrice = 0;
+
+      if (service === 'Full Thesis') {
+        basePrice = level === 'Bachelor' ? 800 : level === 'Master' ? 1800 : 5000;
+      } else if (service === 'Per Page') {
+        basePrice = level === 'Bachelor' ? 10 : level === 'Master' ? 20 : 40;
+        basePrice *= pages;
+      } else if (service === 'Editing') {
+        basePrice = level === 'Bachelor' ? 3 : level === 'Master' ? 7 : 15;
+        basePrice *= pages;
+      } else if (service === 'Formatting') {
+        basePrice = 100;
+      }
+
+      if (urgency === 'Moderate') basePrice *= 1.2;
+      else if (urgency === 'Urgent') basePrice *= 1.5;
+
+      document.getElementById('result').innerText = `Estimated Price: $${basePrice.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>
