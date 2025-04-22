@@ -124,9 +124,9 @@
       let basePrice = 0;
 
       if (service === 'Full Thesis') {
-        basePrice = level === 'Bachelor' ? 500 : level === 'Master' ? 1500 : 2500;
+        basePrice = level === 'Bachelor' ? 300 : level === 'Master' ? 600 : 1500;
       } else if (service === 'Per Page') {
-        basePrice = level === 'Bachelor' ? 10 : level === 'Master' ? 20 : 40;
+        basePrice = level === 'Bachelor' ? 5 : level === 'Master' ? 10 : 25;
         basePrice *= pages;
       } else if (service === 'Editing') {
         basePrice = level === 'Bachelor' ? 3 : level === 'Master' ? 7 : 15;
